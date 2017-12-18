@@ -24,7 +24,7 @@ def gen(camera):
 @app.route('/video_feed')
 def video_feed():
     return Response(gen(video_camera),
-                    mimetype='multipart/x-mixed-replace; boundary=frame')
+                    mimetype='multipart/x-mixed-replace; boundary=--jpgboundary')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=False, threaded=True)
